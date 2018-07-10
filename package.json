@@ -4,15 +4,21 @@
   "description": "",
   "main": "index.js",
   "engines": {
-    "node": "9.2.1", 
+    "node": "9.2.1",
     "npm": "5.8.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"", 
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Steve Bogucki stevebogucki12@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "concurrently": "^3.6.0",
+    "express": "^4.16.3",
+    "nodemon": "^1.17.5"
   }
 }
