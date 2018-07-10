@@ -52,6 +52,17 @@ The planned technology stack:
 ## Screenshots
 
 
++ Day Two, July 10, 2018:
+
+
+*Added a landing page and a warning banner:* 
+
+
+
+![Imgur](https://i.imgur.com/UuTSsyF.jpg)
+
+
+
 + Day One, July 9, 2018: 
 
 
@@ -71,6 +82,13 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+**Day Two, July 10, 2018:**
+
+
++ Added a warning banner. 
++ Added a landing page. 
 
 
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'; 
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Home from './Home';
-import Header from './Header';
+import WarningBanner from './WarningBanner';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
 const theme = createMuiTheme({
@@ -27,7 +27,7 @@ const App = () => {
             <MuiThemeProvider theme={theme}>        
             <BrowserRouter>
                 <div>                    
-                    <Header />
+                    <WarningBanner />
                     <Route exact path="/" component={Home} />
                 </div>
             </BrowserRouter>
