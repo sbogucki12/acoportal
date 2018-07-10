@@ -55,10 +55,18 @@ The planned technology stack:
 + Day One, July 9, 2018: 
 
 
+*Working on the color, utilizing Material-UI theme:*
+
+
+![Imgur](https://i.imgur.com/XarM0OV.jpg)
+
+
+
 *Off and Running:*
 
 
 ![recordIt](http://g.recordit.co/kqFbFDBfls.gif)
+
 
 
 
@@ -69,7 +77,7 @@ The planned technology stack:
 **Day One, July 9, 2018:** 
 
 
-
++ Implemented Material-UI
 + Implemented ReactRouter 
 + Deployed to Heroku via Heroku CLI (and git)
 + Initialed git for GitHub.

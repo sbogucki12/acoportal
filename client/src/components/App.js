@@ -1,28 +1,37 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'; 
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Home from './Home';
+import Header from './Header';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
-const Home = () => {
-   return <h2>Home</h2>
-};
-
-const Login = () => {
-    return <h2>Login</h2>
-};
-
-const Header = () => {
-    return  <h3>This is the Header</h3>
-};
-
+const theme = createMuiTheme({
+    palette: {
+      primary: {
+          main:     "#1976d2",
+          light:    "#63a4ff",
+          dark:     "#004ba0"
+      }, 
+      secondary: {
+          main:     "#e0e0e0",
+          light:    "#ffffff",
+          dark:     "#aeaeae"
+      }      
+    },
+  });
+  
 const App = () => {
-    return (
+    return (        
         <div>
+            <CssBaseline />
+            <MuiThemeProvider theme={theme}>        
             <BrowserRouter>
-                <div>
+                <div>                    
                     <Header />
-                    <Route path="/login" component={Login} />
                     <Route exact path="/" component={Home} />
                 </div>
             </BrowserRouter>
+            </MuiThemeProvider>
         </div>
     )
 };
