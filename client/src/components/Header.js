@@ -1,27 +1,47 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import AirplaneIcon from '@material-ui/icons/AirplanemodeActive';
+import AppBarMenu from './AppBarMenu';
 
-const styles = { 
-    background1: {
-        backgroundColor: '#004ba0'
-    },
-    background2: {
-        backgroundColor: '#1976d2'
-    },
-    background3: {
-        backgroundColor: '#63a4ff'
-    }
+const styles = {
+  root: {
+    flexGrow: 1,
+  },
+  flex: {
+    flex: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
+
+function Header(props) {
+  const { classes } = props;
+  return (
+    <div className={classes.root}>
+      <AppBar position="static">
+        <Toolbar>
+          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+            <AppBarMenu />
+          </IconButton>
+          <Typography variant="title" color="inherit" className={classes.flex}>
+            Portal: LAACO
+          </Typography>
+          <AirplaneIcon color="inherit" />
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
 }
 
-const Header = (props) => {
-    const { classes } = props;
-    return(
-        <div>
-        <div className={classes.background1}><br /></div>
-        <div className={classes.background2}><br /></div>
-        <div className={classes.background3}><br /></div>
-        </div>
-    )
-}
+Header.propTypes = {
+  classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Header);

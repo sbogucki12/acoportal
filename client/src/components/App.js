@@ -1,9 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom'; 
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Home from './Home';
+import Landing from './Landing';
 import WarningBanner from './WarningBanner';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Home from './Home';
 
 const theme = createMuiTheme({
     palette: {
@@ -28,7 +29,8 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
-                    <Route exact path="/" component={Home} />
+                    <Route exact path="/home" component={Home} />
+                    <Route exact path="/" component={Landing} />
                 </div>
             </BrowserRouter>
             </MuiThemeProvider>

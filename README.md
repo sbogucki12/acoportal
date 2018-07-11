@@ -52,6 +52,17 @@ The planned technology stack:
 ## Screenshots
 
 
+
++ Day Three, July 11, 2018: 
+
+
+*Added some content:*
+
+
+![RecordIt](http://g.recordit.co/7H17va7D70.gif)
+
+
+
 + Day Two, July 10, 2018:
 
 
@@ -82,6 +93,13 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+**Day Three, July 11, 2018:**
+
+
++ Added HomeTabs component and login component.
+
 
 
 **Day Two, July 10, 2018:**
