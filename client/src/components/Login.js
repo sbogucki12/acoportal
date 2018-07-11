@@ -40,12 +40,12 @@ const styles = theme => ({
         <Paper className={classes.root} elevation={4}>
             <Grid container spacing={0}>
                 <Grid item xs={3} sm={5} />
-                <Grid item xs={6} sm={2}>
+                <Grid item xs={6} sm={3}>
                     <Typography variant="subheading" gutterBottom>
                         Please Log In
                     </Typography>
                 </Grid>
-                <Grid item xs={3} sm={5} />
+                <Grid item xs={3} sm={4} />
             </Grid>                
             <Grid container spacing={0}>
                 <Grid item xs={1} sm={3} />
@@ -56,27 +56,29 @@ const styles = theme => ({
                             label="Username"
                             className={classes.textField}            
                             margin="normal"
+                            align="center"
                         />
                         <TextField
                             id="password"
                             label="Password"
                             className={classes.textField}
                             margin="normal"
+                            align="center"
                         />
-                        <br />
-                        <Grid container spacing={0}>
-                            <Grid item xs={3} sm={4} />
-                            <Grid item xs={6} sm={4}>
-                                <Button variant="outlined" color="primary" className={classes.button} align="center">
-                                    Submit
-                                </Button>                        
-                            </Grid>
-                            <Grid item xs={3} sm={4}/>  
-                        </Grid>
-                    </form>            
+                        </form> 
+                    </Grid>                    
+                    <Grid item xs={1} sm={3} />
+                </Grid>    
+                <br />
+                <Grid container spacing={0}>
+                    <Grid item xs={3} sm={5} />
+                    <Grid item xs={6} sm={2}>
+                        <Button variant="outlined" color="primary" className={classes.button} align="center">
+                            Submit
+                        </Button>                        
+                    </Grid>
+                    <Grid item xs={3} sm={5}/>  
                 </Grid>
-                <Grid item xs={1} sm={3} />                           
-            </Grid>            
         </Paper>
       );
     }
