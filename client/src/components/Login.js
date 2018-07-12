@@ -6,6 +6,8 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import TempContinue from './TempContinue';
+import { Link } from 'react-router-dom';
 
 const styles = theme => ({
     container: {
@@ -26,8 +28,11 @@ const styles = theme => ({
         paddingBottom: theme.spacing.unit * 2,
       },
       button: {
-        margin: theme.spacing.unit,
+        margin: theme.spacing.unit
       },
+      linkText: {
+          textDecoration: 'none'
+      }
   });
 
   class Login extends React.Component {    
@@ -66,19 +71,33 @@ const styles = theme => ({
                             align="center"
                         />
                         </form> 
-                    </Grid>                    
-                    <Grid item xs={1} sm={3} />
-                </Grid>    
-                <br />
-                <Grid container spacing={0}>
-                    <Grid item xs={3} sm={5} />
-                    <Grid item xs={6} sm={2}>
-                        <Button variant="outlined" color="primary" className={classes.button} align="center">
+                </Grid>                    
+                <Grid item xs={1} sm={3} />
+            </Grid>    
+            <br />
+            <Grid container spacing={0}>
+                <Grid item xs={3} sm={5} />
+                <Grid item xs={6} sm={2}>
+                    <Link to="/temp" className={classes.linkText}>
+                        <Button 
+                        variant="outlined" 
+                        color="primary" 
+                        className={classes.button} 
+                        align="center">
                             Submit
-                        </Button>                        
-                    </Grid>
-                    <Grid item xs={3} sm={5}/>  
+                        </Button>
+                    </Link>                        
                 </Grid>
+                <Grid item xs={3} sm={5}/>  
+            </Grid>
+            <br />
+            <Grid container spacing={0}>
+                <Grid item xs={1} sm={1} />
+                <Grid item xs={10} sm={10}>
+                    <TempContinue />
+                </Grid>
+                <Grid item xs={1} sm={1}/>      
+            </Grid>
         </Paper>
       );
     }

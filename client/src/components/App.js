@@ -5,6 +5,8 @@ import Landing from './Landing';
 import WarningBanner from './WarningBanner';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Home from './Home';
+import LoginBig from './LoginBig';
+import TempComponent from './TempComponent';
 
 const theme = createMuiTheme({
     palette: {
@@ -17,6 +19,9 @@ const theme = createMuiTheme({
           main:     "#e0e0e0",
           light:    "#ffffff",
           dark:     "#aeaeae"
+      }, 
+      textSecondary: {
+          main:     "#ffb04c"
       }      
     },
   });
@@ -29,6 +34,8 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
+                    <Route exact path="/temp" component={TempComponent}/>
+                    <Route exact path="/login" component={LoginBig} />
                     <Route exact path="/home" component={Home} />
                     <Route exact path="/" component={Landing} />
                 </div>

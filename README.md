@@ -34,6 +34,7 @@ The planned technology stack:
 + Node.js
 + Express
 + ReactJS
++ Redux
 + ReactRouter
 + Material-UI
 + VSCode
@@ -50,6 +51,18 @@ The planned technology stack:
 
 
 ## Screenshots
+
+
+
++ Day Four, July 12, 2018: 
+
+
+
+*Added some temp components:* 
+
+
+
+![recordIt](http://g.recordit.co/DL0ivraLS3.gif)
 
 
 
@@ -93,6 +106,16 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Four, July 12, 2018:**
+
+
+
++ Wired up the Redux store (Redux will be used to maintain the user authorization within state while logged in)
++ Added temporary components. 
+
 
 
 **Day Three, July 11, 2018:**
