@@ -32,20 +32,20 @@ class AppBarMenu extends React.Component {
     return (
       <div>
         <MenuIcon
-          aria-owns={anchorEl ? 'simple-menu' : null}
-          aria-haspopup="true"
-          onClick={this.handleClick} 
-          color="secondary" />
+        aria-owns={anchorEl ? 'simple-menu' : null}
+        aria-haspopup="true"
+        onClick={this.handleClick} 
+        color="secondary" />
         <Menu
           id="simple-menu"
           anchorEl={anchorEl}
           open={Boolean(anchorEl)}
           onClose={this.handleClose}
         >
-          <MenuItem onClick={this.handleClose}><Link to="/home" className={classes.link}>Prospective Applicants</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to="/login" className={classes.link}>Existing LAACO Applicants</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to="/login" className={classes.link}>DERs</Link></MenuItem>
-          <MenuItem onClick={this.handleClose}><Link to="/home" className={classes.link}>Logout</Link></MenuItem>
+        <MenuItem onClick={this.handleClose}><Link to="/home" className={classes.link}>Prospective Applicants</Link></MenuItem>
+        <Link to="/login" className={classes.link}><MenuItem onClick={this.handleClose}>Existing LAACO Applicants</MenuItem></Link>
+        <Link to="/login" className={classes.link}><MenuItem onClick={this.handleClose}>DERs</MenuItem></Link>
+        <Link to="/home" className={classes.link}><MenuItem onClick={this.handleClose}>Logout</MenuItem></Link>
         </Menu>
       </div>
     );
