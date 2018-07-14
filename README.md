@@ -50,7 +50,25 @@ The planned technology stack:
 
 
 
+## TO-DO
+
+
+[ ] Add text fields to profile page for street, city, zip and selection for state
+
+
+[ ] Work on DER Component
+
+
+
 ## Screenshots
+
+
+
++ Day Five, July 13, 2018: 
+
+
+
+![recordIt](http://g.recordit.co/makdTWNIuD.gif)
 
 
 
@@ -106,6 +124,15 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Five, July 13, 2018:** 
+
+
+
++ Added Profile component. 
++ Added DER component.
 
 
 

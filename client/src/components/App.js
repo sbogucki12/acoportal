@@ -7,6 +7,9 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Home from './Home';
 import LoginBig from './LoginBig';
 import TempComponent from './TempComponent';
+import DerLoginBig from './DerLoginBig';
+import DerComponent from './DerComponent';
+import Profile from './Profile';
 
 const theme = createMuiTheme({
     palette: {
@@ -34,6 +37,9 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
+                    <Route exact path="/dermain" component={DerComponent} />
+                    <Route exact path="/derlogin" component={DerLoginBig} />
+                    <Route exact path="/profile" component={Profile} />
                     <Route exact path="/temp" component={TempComponent}/>
                     <Route exact path="/login" component={LoginBig} />
                     <Route exact path="/home" component={Home} />
