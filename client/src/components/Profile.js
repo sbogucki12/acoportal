@@ -7,10 +7,8 @@ import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
-import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
+
+import AdvisorQuestion from './AdvisorQuestion';
 
 const styles = theme => ({
     image: {
@@ -42,18 +40,19 @@ const styles = theme => ({
     },
 });
 
-
-
 class Profile extends React.Component {
-    state = {        
-        name: '',
-    };
+    constructor(props){
+        super(props)
+        this.state = {        
+            name: '', 
+            identity: this.props.user        
+        };       
+    }
 
     handleChange = event => {
         this.setState({ name: event.target.value });
     };
-
-      
+    
     render(){
         const { classes } = this.props; 
 
@@ -123,26 +122,13 @@ class Profile extends React.Component {
                                     margin="normal"
                                     />
                                     <br />
-                                    <form className={classes.formRoot} autoComplete="off">
-                                        <FormControl className={classes.formControl}>
-                                            <InputLabel htmlFor="age-simple">Advisor Name</InputLabel>
-                                            <Select
-                                            value={this.state.name}
-                                            onChange={this.handleChange}
-                                            inputProps={{
-                                                name: 'name',
-                                                id: 'name-simple',
-                                            }}
-                                            >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                    <MenuItem value={"Advisor1"}>Advisor1</MenuItem>
-                                                    <MenuItem value={"Advisor2"}>Advisor2</MenuItem>
-                                                    <MenuItem value={"Advisor3"}>Advisor3</MenuItem>
-                                            </Select>
-                                        </FormControl>
-                                    </form>                                    
+                                    {(()=>{
+                                        if(this.state.identity === "currentapp"){
+                                            return null
+                                        }else{
+                                            return <AdvisorQuestion />
+                                        }
+                                    })()}                                    
                                 </Grid>
                                 <Grid item xs={1} />
                             </Grid>

@@ -53,14 +53,31 @@ The planned technology stack:
 ## TO-DO
 
 
-[ ] Add text fields to profile page for street, city, zip and selection for state
+[ ] Add text fields to profile page for street, city, zip and selection for state.
 
 
-[ ] Work on DER Component
+[ ] Work on DER component.
+
+
+[ ] Work on Current Applicant component.
 
 
 
 ## Screenshots
+
+
+
++ Day Six, July 16, 2018: 
+
+
+
+*The "Advisor" dropdown on the profile page now conditionally renders:* 
+
+
+
+![recordIt](http://g.recordit.co/5KCyetaAbj.gif)
+
+
 
 
 
@@ -124,6 +141,16 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Six, July 16, 2018:**
+
+
+
++ Made the "Advisor" dropdown in the Profile component conditional (by passing props to the state in the Profile component from the Current Applicant component).
++ Wired up navigation from login to Current Applicant component. 
++ Added Current Applicant component. 
 
 
 

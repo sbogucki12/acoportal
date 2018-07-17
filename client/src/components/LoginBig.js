@@ -86,7 +86,7 @@ const styles = theme => ({
                             <Grid container spacing={0}>
                                 <Grid item xs={3} sm={5} />
                                 <Grid item xs={6} sm={2}>
-                                    <Link to="/temp" className={classes.linkText}>
+                                    <Link to="/currentapp" className={classes.linkText}>
                                         <Button variant="outlined" color="primary" className={classes.button} align="center">
                                             Submit
                                         </Button>

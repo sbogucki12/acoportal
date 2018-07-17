@@ -10,6 +10,7 @@ import TempComponent from './TempComponent';
 import DerLoginBig from './DerLoginBig';
 import DerComponent from './DerComponent';
 import Profile from './Profile';
+import CurrentApplicants from './CurrentApplicants';
 
 const theme = createMuiTheme({
     palette: {
@@ -30,6 +31,15 @@ const theme = createMuiTheme({
   });
   
 const App = () => {
+
+    const CurrentApp = () => {
+        return (
+          <Profile 
+            user="currentapp"            
+          />
+        );
+      }
+
     return (        
         <div>
             <CssBaseline />
@@ -37,6 +47,8 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
+                    <Route exact path="/profilecurrentapp" render={CurrentApp} />
+                    <Route exact path="/currentapp" component={CurrentApplicants} />
                     <Route exact path="/dermain" component={DerComponent} />
                     <Route exact path="/derlogin" component={DerLoginBig} />
                     <Route exact path="/profile" component={Profile} />
