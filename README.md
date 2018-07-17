@@ -67,6 +67,19 @@ The planned technology stack:
 
 
 
++ Day Seven, July 17, 2018: 
+
+
+
+*Added content to DER and Current Applicant components:*
+
+
+
+![recordIt](http://g.recordit.co/ch04u1IQVa.gif)
+
+
+
+
 + Day Six, July 16, 2018: 
 
 
@@ -141,6 +154,14 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Seven, July 17, 2018:**
+
+
+
++ Added content to both DER and Current Applicant components. 
 
 
 
