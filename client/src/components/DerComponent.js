@@ -14,6 +14,7 @@ import Grid from '@material-ui/core/Grid';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
+import Paper from '@material-ui/core/Paper';
 
 const styles = theme => ({
   root: {
@@ -34,72 +35,79 @@ function DerComponent(props) {
       <div>
         <Header /> 
         <br />
-        <br /> 
-        <div className={classes.root}>
-            <Grid container spacing={0}>
-                    <Grid item xs={1} sm={5} />
-                    <Grid item xs={11} sm={4}>
-                        <Typography 
-                        variant="headline" 
-                        gutterBottom
-                        >
-                            LAACO DERs
-                        </Typography>
+        <br />
+        <Grid container spacing={0}>
+            <Grid item xs={1} sm={3} />
+            <Grid item xs={10} sm={6}>
+                <Paper className={classes.root} elevation={4}>
+                    <div className={classes.root}>
+                    <Grid container spacing={0}>
+                            <Grid item xs={12}>
+                                <br />
+                                <Typography 
+                                variant="headline" 
+                                gutterBottom
+                                align="center">
+                                    LAACO DERs
+                                </Typography>
+                            </Grid>
                     </Grid>
-                    <Grid item xs={false} sm={3} />            
-            </Grid>
-            <br />
-            <Grid container spacing={0}>
-                <Grid item xs={1} sm={3} />
-                <Grid item xs={10} sm={6}>
-                    <List>
-                        <Link to="/profile"  className={classes.text}>
-                            <ListItem divider>
-                                <Avatar>
-                                    <ProfileIcon />
-                                </Avatar>
-                                <ListItemText primary="Update Profile" />
-                            </ListItem>
-                        </Link>
-                        <ListItem divider>
-                            <Avatar>
-                                <WorkIcon />
-                            </Avatar>
-                            <ListItemText primary="DER-Recommend Approval Documents" secondary="Submit documents for final FAA approval" />
-                        </ListItem>
-                        <ListItem divider>
-                            <Avatar>
-                                <DoneIcon />
-                            </Avatar>
-                            <ListItemText primary="DER-Approved Documents" secondary="Submit DER-approved documents for DER-oversight" />
-                        </ListItem>
-                        <ListItem divider>
-                            <Avatar>
-                                <EventIcon />
-                            </Avatar>
-                            <ListItemText primary="DER Training Calendar" secondary="Review schedule / Register for training" />
-                        </ListItem>
-                    </List>
                     <br />
                     <Grid container spacing={0}>
-                        <Grid item xs={3} sm={4}/>
-                        <Grid item xs={6} sm={4}>
-                            <Link to="home" className={classes.text}>
-                                <Button 
-                                variant="outlined" 
-                                color="primary" 
-                                className={classes.button}                    
-                                >
-                                    Home
-                                </Button>
-                            </Link>     
-                        </Grid>
-                        <Grid item xs={3} sm={4} />
-                    </Grid>
-                </Grid>                
-                <Grid item xs={1} sm={3} />        
-            </Grid>  
-        </div>
+                        <Grid item xs={1} sm={3} />
+                        <Grid item xs={10} sm={6}>
+                            <List>
+                                <Link to="/profile"  className={classes.text}>
+                                    <ListItem divider>
+                                        <Avatar>
+                                            <ProfileIcon />
+                                        </Avatar>
+                                        <ListItemText primary="Update Profile" />
+                                    </ListItem>
+                                </Link>
+                                <ListItem divider>
+                                    <Avatar>
+                                        <WorkIcon />
+                                    </Avatar>
+                                    <ListItemText primary="DER-Recommend Approval Documents" secondary="Submit documents for final FAA approval" />
+                                </ListItem>
+                                <ListItem divider>
+                                    <Avatar>
+                                        <DoneIcon />
+                                    </Avatar>
+                                    <ListItemText primary="DER-Approved Documents" secondary="Submit DER-approved documents for DER-oversight" />
+                                </ListItem>
+                                <ListItem divider>
+                                    <Avatar>
+                                        <EventIcon />
+                                    </Avatar>
+                                    <ListItemText primary="DER Training Calendar" secondary="Review schedule / Register for training" />
+                                </ListItem>
+                            </List>
+                            <br />
+                            <Grid container spacing={0}>
+                                <Grid item xs={3} sm={4}/>
+                                <Grid item xs={6} sm={4}>
+                                    <Link to="home" className={classes.text}>
+                                        <Button 
+                                        variant="outlined" 
+                                        color="primary" 
+                                        className={classes.button}                    
+                                        >
+                                            Home
+                                        </Button>
+                                    </Link>     
+                                </Grid>
+                                <Grid item xs={3} sm={4} />
+                            </Grid>
+                        </Grid>                
+                        <Grid item xs={1} sm={3} />        
+                    </Grid>  
+                </div>
+            </Paper>
+            </Grid>
+            <Grid item xs={1} sm={3} />  
+        </Grid>
       </div>
   );
 }

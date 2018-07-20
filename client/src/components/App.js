@@ -11,6 +11,8 @@ import DerLoginBig from './DerLoginBig';
 import DerComponent from './DerComponent';
 import Profile from './Profile';
 import CurrentApplicants from './CurrentApplicants';
+import StaffComponent from './StaffComponent';
+import LoginStaff from './LoginStaff';
 
 const theme = createMuiTheme({
     palette: {
@@ -47,6 +49,8 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
+                    <Route exact path="/loginstaff" component={LoginStaff} />
+                    <Route exact path="/staffmain" component={StaffComponent} />
                     <Route exact path="/profilecurrentapp" render={CurrentApp} />
                     <Route exact path="/currentapp" component={CurrentApplicants} />
                     <Route exact path="/dermain" component={DerComponent} />

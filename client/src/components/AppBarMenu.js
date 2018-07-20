@@ -45,6 +45,7 @@ class AppBarMenu extends React.Component {
         <MenuItem onClick={this.handleClose}><Link to="/home" className={classes.link}>Prospective Applicants</Link></MenuItem>
         <Link to="/login" className={classes.link}><MenuItem onClick={this.handleClose}>Existing LAACO Applicants</MenuItem></Link>
         <Link to="/derlogin" className={classes.link}><MenuItem onClick={this.handleClose}>DERs</MenuItem></Link>
+        <Link to="/loginstaff" className={classes.link}><MenuItem onClick={this.handleClose}>LAACO Staff</MenuItem></Link>
         <Link to="/home" className={classes.link}><MenuItem onClick={this.handleClose}>Logout</MenuItem></Link>
         </Menu>
       </div>

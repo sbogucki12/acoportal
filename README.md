@@ -22,6 +22,11 @@ Here is the initial concept, on paper:
 
 
 
+P.S.:  At my old office, we had a database that tracked all of the office's incoming and outgoing documents and work assignments as well as deadlines.  The system utilized technology that was deprecated before the system was ever in even put into use!   I'm not sure if I'm going to build that entire system into this app (because it would require some persistent cloud storage that I'm not certain I want to fund), but I've decided to at least create the UI for the system within this app, connected to a "LAACO Staff" link and log-in page.  
+
+
+
+
 ## Technology
 
 
@@ -56,14 +61,28 @@ The planned technology stack:
 [ ] Add text fields to profile page for street, city, zip and selection for state.
 
 
-[ ] Work on DER component.
+[ ] Adjust formatting on all subcomponents for iPad 
 
 
-[ ] Work on Current Applicant component.
+
 
 
 
 ## Screenshots
+
+
+
++ Day Eight, July 19, 2018: 
+
+
+
+
+*Added staff component:*
+
+
+
+
+![recordIt](http://g.recordit.co/UXEmLSRDvI.gif)
 
 
 
@@ -154,6 +173,13 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Eight, July 19, 2018:** 
+
+
++ Added Staff component. 
 
 
 
