@@ -13,6 +13,9 @@ import Profile from './Profile';
 import CurrentApplicants from './CurrentApplicants';
 import StaffComponent from './StaffComponent';
 import LoginStaff from './LoginStaff';
+import AdminHome from './AdminHome';
+import AdminRecord from './AdminRecord';
+
 
 const theme = createMuiTheme({
     palette: {
@@ -49,6 +52,8 @@ const App = () => {
             <BrowserRouter>
                 <div>                    
                     <WarningBanner />
+                    <Route exact path="/adminRecord" component={AdminRecord} />
+                    <Route exact path="/adminhome" component={AdminHome} />
                     <Route exact path="/loginstaff" component={LoginStaff} />
                     <Route exact path="/staffmain" component={StaffComponent} />
                     <Route exact path="/profilecurrentapp" render={CurrentApp} />

@@ -72,6 +72,17 @@ The planned technology stack:
 
 
 
++ Day Nine, August 7, 2018:
+
+
+
+*Added prototype "record entry" feature for document tracking tool:*
+
+
+![recordIt](http://g.recordit.co/6RruJOTf2C.gif)
+
+
+
 + Day Eight, July 19, 2018: 
 
 
@@ -173,6 +184,15 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+**Day Nine, August 7, 2018:**
+
++ My previous office had a tool for tracking all work assignments; a tool that I am going to incorporate into this app.  I implemented the first part: a component that allows the office's administrative support staff to enter a record into the system.  Of course, it's all currently notional because there is no server-side mechanism currently in place to allow this app to save persistent data.  This current "prototype" version is just to present the idea for future intended functionality. 
+
+<br />
+
+The record entry component generates a deadline for the assignment based on the specific type of record (different record types have different allowances for duration to complete).  The component also generates a unique "control number" to track the assignment, though currently, that functionality is simply an incrementing counter.  In the real tool, that control number will increment from the last saved record in the database.  
 
 
 

@@ -7,41 +7,44 @@ import { Link } from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import TextField from '@material-ui/core/TextField';
+import Header from './Header';
 
 const styles = theme => ({  
   button:       {
-    margin: theme.spacing.unit,
-  }, 
+    margin: theme.spacing.unit    
+    }, 
   root:         {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
-  },
+    },
   formControl:  {
     margin: theme.spacing.unit,
-  },
+    },
   textField:    {
     marginLeft: theme.spacing.unit,
     marginRight: theme.spacing.unit,
     width: 200,
-  },
+    },
   menu:         {
     width: '100%',
-  },
+    },
+  linkText:     {
+    textDecoration: 'none'
+    }
 });
 
 var PageInfo = () => {
     return(
         <div>
-            <hr />
-            <Typography variant="body2" gutterBottom>
-                This component is an example of how LAACO office administrative staff will be able to enter records into a (presently unbuilt) functioning tracking system.  The data entered by the administrative personnel are reflected at the bottom of the component; though, the "Save Record" button is not currently in service.  This component is a prototype to present future intended functionality.
+            <hr />            
+            <Typography variant="body1" gutterBottom>                
+                This component is an example of how LAACO office administrative staff will be able to enter records into a (presently unbuilt) functioning tracking system.  The data entered by the administrative personnel are reflected at the bottom of the component; though, the "Save Record" button is not currently in service.  This component is a prototype to present future intended functionality.                
             </Typography>
-            <hr />
+            <hr />            
         </div>
     )
 }
@@ -107,12 +110,16 @@ class AdminRecord extends React.Component {
         }))
     }
 
+    handleSaveRecord = () => {
+        alert("Saving Records Not Implemented in Prototype")
+    }
+
     handleCreateDeadline = () => {
         Date.prototype.addDays = function(days) {
             var date = new Date(this.valueOf());
             date.setDate(date.getDate() + days);
             return date;
-        }
+        }    
 
         let deadline = new Date(); 
         let daysToAdd; 
@@ -120,9 +127,9 @@ class AdminRecord extends React.Component {
             daysToAdd = 15; 
         } else if(this.state.recordType === "Test Plan (DER Recommend Approval)" || this.state.recordType === "Test Report (DER Recommend Approval)"){
             daysToAdd = 30; 
-        } else if(this.state.recordName === "Project Specific Certification Plan"){
+        } else if(this.state.recordType === "Project Specific Certification Plan"){
             daysToAdd = 180; 
-        } else if(this.state.recordName === "DER Application"){
+        } else if(this.state.recordType === "DER Application"){
             daysToAdd = 90;
         } else{
             daysToAdd = 0;
@@ -130,8 +137,7 @@ class AdminRecord extends React.Component {
        
         deadline = deadline.addDays(daysToAdd);
         let dd = deadline.getDate();
-        let month = deadline.getMonth() + 1;
-        console.log("month = " + month);
+        let month = deadline.getMonth() + 1;        
         let mm;                 
         switch(month){
             case(1):
@@ -168,7 +174,10 @@ class AdminRecord extends React.Component {
                 mm = "nov"
                 break; 
             case(12):
-                mm = "dec" 
+                mm = "dec"
+                break;
+            default: 
+                mm = "error" 
         }
 
         let yr = deadline.getFullYear();
@@ -182,8 +191,7 @@ class AdminRecord extends React.Component {
     
     render() {
       const { classes } = this.props;  
-      const showPageInfoBool = this.state.showPageInfo;  
-      const deadline = this.state.deadline; 
+      const showPageInfoBool = this.state.showPageInfo;         
       const branches   = [
         {
             value: '100L',
@@ -243,10 +251,12 @@ class AdminRecord extends React.Component {
 
       return (
         <React.Fragment>
+            <Header />
             <Grid container spacing={8} align="center">
                 <Grid item xs={1} sm={3} />
                 <Grid item xs={10} sm ={6}>
-                    <Typography variant="display2" gutterBottom align="center">
+                    <br />
+                    <Typography variant="display1" gutterBottom align="center">
                         <b>Admin:</b> &nbsp; Record Entry Example
                     </Typography>
                     <br />
@@ -468,8 +478,39 @@ class AdminRecord extends React.Component {
                                 </Typography>                             
                             </Grid>
                             <Grid item xs={1} />                        
-                        </Grid>                       
+                        </Grid>
+
+                        <Grid container spacing={8} align="center">
+                            <Grid item xs={1} />
+                            <Grid item xs={10}>
+                                <Button 
+                                variant="outlined" 
+                                color="primary"                     
+                                className={classes.button}
+                                onClick={() => {this.handleSaveRecord()}}
+                                >
+                                    Save Record
+                                </Button>                            
+                            </Grid>
+                            <Grid item xs={1} />                        
+                        </Grid>                                              
                     </Paper>
+                    <br />
+                    <Grid container spacing={8} align="center">
+                            <Grid item xs={1} />
+                            <Grid item xs={10}>
+                                <Link to="/home" className={classes.linkText}>                                
+                                    <Button 
+                                    variant="outlined" 
+                                    color="primary"                     
+                                    className={classes.button}                                
+                                    >
+                                        Home
+                                    </Button>
+                                </Link>                                                         
+                            </Grid>
+                            <Grid item xs={1} />                        
+                        </Grid>                                              
                 </Grid>
                 <Grid item xs={1} sm={2} />
             </Grid>

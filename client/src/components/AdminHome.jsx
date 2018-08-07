@@ -6,38 +6,32 @@ import Paper from '@material-ui/core/Paper';
 import { withStyles } from '@material-ui/core/styles';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import ReportIcon from '@material-ui/icons/InsertChart';
-import EngIcon from '@material-ui/icons/Group';
 import SendIcon from '@material-ui/icons/Send';
 import Grid from '@material-ui/core/Grid';
 import Header from './Header';
-import CheckIcon from '@material-ui/icons/Check';
 import { Link } from 'react-router-dom';
 import { Button } from '@material-ui/core';
 
 const styles = theme => ({
-  menuItem:     {
-    '&:focus':  {
+  menuItem: {
+    '&:focus': {
       backgroundColor: theme.palette.primary.main,
       '& $primary, & $icon': {
         color: theme.palette.common.white,
             },
         },
     },
-    primary:    {},
-    icon:       {},
-    text:       {
+    primary: {},
+    icon: {},
+    text: {
         textDecoration: 'none !important'
     },
-    button:     {
+    button: {
         margin: theme.spacing.unit
     },
-    linkText:   {
-        textDecoration: 'none'
-    }
 });
 
-function StaffComponent(props) {
+function AdminHome(props) {
   const { classes } = props;
 
   return (
@@ -50,32 +44,14 @@ function StaffComponent(props) {
         <br />
             <Paper>
                 <MenuList>
-                    <Link to="/adminhome" className={classes.linkText}>
+                    <Link to="/adminrecord" className={classes.text}>
                         <MenuItem className={classes.menuItem}>
                             <ListItemIcon className={classes.icon}>
                                 <SendIcon />
                             </ListItemIcon>
-                            <ListItemText classes={{ primary: classes.primary }} inset primary="Admin." />
+                            <ListItemText classes={{ primary: classes.primary }} inset primary="Enter Record" />
                         </MenuItem>
-                    </Link>
-                    <MenuItem className={classes.menuItem}>
-                        <ListItemIcon className={classes.icon}>
-                            <EngIcon />
-                        </ListItemIcon>
-                        <ListItemText classes={{ primary: classes.primary }} inset primary="Engineers" />
-                    </MenuItem>
-                    <MenuItem className={classes.menuItem}>
-                        <ListItemIcon className={classes.icon}>
-                            <CheckIcon />
-                        </ListItemIcon>
-                        <ListItemText classes={{ primary: classes.primary }} inset primary="Management" />
-                    </MenuItem>
-                    <MenuItem className={classes.menuItem}>
-                        <ListItemIcon className={classes.icon}>
-                            <ReportIcon />
-                        </ListItemIcon>
-                        <ListItemText classes={{ primary: classes.primary }} inset primary="Reports" />
-                    </MenuItem>
+                    </Link>                    
                 </MenuList>
                 <br />
                 <Grid container spacing={0}>
@@ -105,8 +81,8 @@ function StaffComponent(props) {
   );
 }
 
-StaffComponent.propTypes = {
+AdminHome.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(StaffComponent);
+export default withStyles(styles)(AdminHome);
