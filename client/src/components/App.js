@@ -49,9 +49,9 @@ const App = () => {
         <div>
             <CssBaseline />
             <MuiThemeProvider theme={theme}>        
-            <BrowserRouter>
+            <BrowserRouter>                
                 <div>                    
-                    <WarningBanner />
+                    <WarningBanner />                    
                     <Route exact path="/adminRecord" component={AdminRecord} />
                     <Route exact path="/adminhome" component={AdminHome} />
                     <Route exact path="/loginstaff" component={LoginStaff} />
