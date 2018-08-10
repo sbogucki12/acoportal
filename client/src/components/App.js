@@ -50,7 +50,7 @@ const App = () => {
             <CssBaseline />
             <MuiThemeProvider theme={theme}>        
             <BrowserRouter>                
-                <div>                    
+                <div>                                    
                     <WarningBanner />                    
                     <Route exact path="/adminRecord" component={AdminRecord} />
                     <Route exact path="/adminhome" component={AdminHome} />

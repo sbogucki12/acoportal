@@ -43,6 +43,7 @@ The planned technology stack:
 + ReactRouter
 + Material-UI
 + VSCode
++ Jest/Enzyme (testing)
 
 
 *Authentication / Persistent Data:* 
@@ -69,6 +70,18 @@ The planned technology stack:
 
 
 ## Screenshots
+
+
++ Day Ten, August 9, 2018: 
+
+
+
+*Practicing basic snapshot technique via Enzyme for testing:*
+
+
+
+![Imgur](https://i.imgur.com/xSiiQMI.jpg)
+
 
 
 
@@ -186,7 +199,16 @@ The planned technology stack:
 ## Timeline: 
 
 
+
+** Day Ten, August 9, 2018:**
+
+
++ Practicing testing components via Enzyme snapshots.   My previous experience unit testing has been with functions, using assertion statements.  I'm sadly behind the curve when it comes to automated testing of React components, but I'm trying to catch up by getting up to speed with Jest/Enzyme.  
+
+
+
 **Day Nine, August 7, 2018:**
+
 
 + My previous office had a tool for tracking all work assignments; a tool that I am going to incorporate into this app.  I implemented the first part: a component that allows the office's administrative support staff to enter a record into the system.  Of course, it's all currently notional because there is no server-side mechanism currently in place to allow this app to save persistent data.  This current "prototype" version is just to present the idea for future intended functionality. 
 
