@@ -1,5 +1,23 @@
 const express = require('express');
 const app = express();
+const mongoose = require('mongoose');
+const keys = require('./config/keys');
+require('./models/WtsRecord');
+
+if(process.env.NODE_ENV === 'production'){
+    mongoose.connect(process.env.mongoURI)
+} else {
+    mongoose.connect(keys.mongoURI)
+}
+
+const WtsRecord = mongoose.model('wtsrecords');
+
+app.get('/wtsrecords', (req, res) => {
+    WtsRecord.find({})
+    .then((wtsRecords) => {
+        res.send(wtsRecords)
+    })
+})
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));

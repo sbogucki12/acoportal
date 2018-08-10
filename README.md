@@ -72,6 +72,19 @@ The planned technology stack:
 ## Screenshots
 
 
+
++ Day Eleven, August 10, 2018: 
+
+
+
+*Created some dummy data in a MongoDB instance on mLab:*
+
+
+
+![Imgur](https://i.imgur.com/1aSK1xQ.jpg)
+
+
+
 + Day Ten, August 9, 2018: 
 
 
@@ -199,8 +212,16 @@ The planned technology stack:
 ## Timeline: 
 
 
+**Day Eleven, August 10, 2018:**
 
-** Day Ten, August 9, 2018:**
+
+
++ Connected app to MongoDB instance via mongoose.  Tonight, I will create a React component that allows the user to get the records by clicking a button. 
++ Created some dummy data in a MongoDB instance on mLab.
+
+
+
+**Day Ten, August 9, 2018:**
 
 
 + Practicing testing components via Enzyme snapshots.   My previous experience unit testing has been with functions, using assertion statements.  I'm sadly behind the curve when it comes to automated testing of React components, but I'm trying to catch up by getting up to speed with Jest/Enzyme.  
