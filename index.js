@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === 'production'){
 
 const WtsRecord = mongoose.model('wtsrecords');
 
-app.get('/wtsrecords', cors(), (req, res) => {
+app.get('https://safe-falls-67621.herokuapp.com/wtsrecords', cors(), (req, res) => {
     WtsRecord.find({})
     .then((wtsRecords) => {
         res.send(wtsRecords)
