@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const keys = require('./config/keys');
+const cors = require('cors');
 require('./models/WtsRecord');
 
 if(process.env.NODE_ENV === 'production'){
@@ -12,7 +13,7 @@ if(process.env.NODE_ENV === 'production'){
 
 const WtsRecord = mongoose.model('wtsrecords');
 
-app.get('/wtsrecords', (req, res) => {
+app.get('/wtsrecords', cors(), (req, res) => {
     WtsRecord.find({})
     .then((wtsRecords) => {
         res.send(wtsRecords)

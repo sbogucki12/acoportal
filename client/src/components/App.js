@@ -15,7 +15,7 @@ import StaffComponent from './StaffComponent';
 import LoginStaff from './LoginStaff';
 import AdminHome from './AdminHome';
 import AdminRecord from './AdminRecord';
-
+import AdminGetRecords from './AdminGetRecords';
 
 const theme = createMuiTheme({
     palette: {
@@ -51,8 +51,9 @@ const App = () => {
             <MuiThemeProvider theme={theme}>        
             <BrowserRouter>                
                 <div>                                    
-                    <WarningBanner />                    
-                    <Route exact path="/adminRecord" component={AdminRecord} />
+                    <WarningBanner />
+                    <Route exact path="/wtsrecord" component={AdminGetRecords} />                    
+                    <Route exact path="/adminrecord" component={AdminRecord} />
                     <Route exact path="/adminhome" component={AdminHome} />
                     <Route exact path="/loginstaff" component={LoginStaff} />
                     <Route exact path="/staffmain" component={StaffComponent} />

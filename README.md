@@ -77,6 +77,15 @@ The planned technology stack:
 
 
 
+*Connected app to dummy data loaded in mLab:*
+
+
+
+![recordIt](http://g.recordit.co/Ouu0bc0yK6.gif)
+
+
+
+
 *Created some dummy data in a MongoDB instance on mLab:*
 
 
@@ -216,6 +225,7 @@ The planned technology stack:
 
 
 
++ Used fetch to get dummy data from mLab to feed wtsRecord component.
 + Connected app to MongoDB instance via mongoose.  Tonight, I will create a React component that allows the user to get the records by clicking a button. 
 + Created some dummy data in a MongoDB instance on mLab.
 
