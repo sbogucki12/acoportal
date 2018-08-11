@@ -11,15 +11,6 @@ if(process.env.NODE_ENV === 'production'){
     mongoose.connect(keys.mongoURI)
 }
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
-
-    const path = require('path');
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
-
 const WtsRecord = mongoose.model('wtsrecords');
 
 app.get('/api/wtsrecords', cors(), (req, res) => {
@@ -27,6 +18,13 @@ app.get('/api/wtsrecords', cors(), (req, res) => {
     .then((wtsRecords) => {
         res.send(wtsRecords)
     })
+})
+
+app.use(express.static('client/build'));
+
+const path = require('path');
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))   
 })
 
 const PORT = process.env.PORT || 5000; 
