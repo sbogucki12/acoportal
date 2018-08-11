@@ -13,7 +13,7 @@ if(process.env.NODE_ENV === 'production'){
 
 const WtsRecord = mongoose.model('wtsrecords');
 
-app.get('/wtsrecords', cors(), (req, res) => {
+app.get('/api/wtsrecords', cors(), (req, res) => {
     WtsRecord.find({})
     .then((wtsRecords) => {
         res.send(wtsRecords)

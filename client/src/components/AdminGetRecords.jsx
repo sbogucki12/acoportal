@@ -33,7 +33,7 @@ class AdminGetRecords extends React.Component {
     }
 
     handleClick = () => {         
-        fetch('https://safe-falls-67621.herokuapp.com/wtsrecords')
+        fetch('https://safe-falls-67621.herokuapp.com/api/wtsrecords')
             .then(response => {
                 return response.json();
             })            
