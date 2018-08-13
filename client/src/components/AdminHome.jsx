@@ -8,6 +8,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import KeyboardIcon from '@material-ui/icons/Keyboard';
 import GetRecordIcon from '@material-ui/icons/CloudDownload';
+import EditIcon from '@material-ui/icons/Edit';
 import Grid from '@material-ui/core/Grid';
 import Header from './Header';
 import { Link } from 'react-router-dom';
@@ -60,7 +61,15 @@ function AdminHome(props) {
                             </ListItemIcon>
                             <ListItemText classes={{ primary: classes.primary }} inset primary="Get Records" />
                         </MenuItem>
-                    </Link>                    
+                    </Link>
+                    <Link to="/wtseditrecord" className={classes.text}>
+                        <MenuItem className={classes.menuItem}>
+                            <ListItemIcon className={classes.icon}>
+                                <EditIcon />
+                            </ListItemIcon>
+                            <ListItemText classes={{ primary: classes.primary }} inset primary="Edit Record" />
+                        </MenuItem>
+                    </Link>                        
                 </MenuList>
                 <br />
                 <Grid container spacing={0}>

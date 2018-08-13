@@ -73,6 +73,18 @@ The planned technology stack:
 
 
 
++ Day Twelve, August 13, 2018:
+
+
+
+*Added component to allow users to retrieve and edit a record:*
+
+
+
+![recordIt](http://g.recordit.co/zO9syI9yhw.gif)
+
+
+
 + Day Eleven, August 10, 2018: 
 
 
@@ -219,6 +231,14 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Twelve, August 13, 2018:**
+
+
++ Added component that allows user to retrieve record from the MongoDB instance on mLab (searchable by the records' unique "control number"). Record can then be edited, saved, and returned to database. 
+
 
 
 **Day Eleven, August 10, 2018:**
