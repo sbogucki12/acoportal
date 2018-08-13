@@ -53,7 +53,7 @@ class AdminGetRecord extends React.Component {
 
     handleClick = () => {
         let controlNumber = '140L/1/18';
-        fetch(`http://safe-falls-67621.herokuapp.com/api/wtsrecord?controlnumber=${controlNumber}`)
+        fetch(`https://safe-falls-67621.herokuapp.com/api/wtsrecord?controlnumber=${controlNumber}`)
         .then((res) => {
             res.json()
             .then((body) => this.setState({
