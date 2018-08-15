@@ -8,6 +8,7 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Login from './Login';
 import DerLogin from './DerLogin';
+import NewApplicants from './NewApplicants';
 
 function TabContainer({ children, dir }) {
   return (
@@ -65,7 +66,7 @@ class HomeTabs extends React.Component {
           index={this.state.value}
           onChangeIndex={this.handleChangeIndex}
         >
-          <TabContainer dir={theme.direction}>Item One</TabContainer>
+          <TabContainer dir={theme.direction}><NewApplicants /></TabContainer>
           <TabContainer dir={theme.direction}><Login /></TabContainer>
           <TabContainer dir={theme.direction}><DerLogin /></TabContainer>
         </SwipeableViews>

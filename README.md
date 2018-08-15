@@ -73,7 +73,17 @@ The planned technology stack:
 
 
 
-+ Day Twelve, August 13, 2018:
+
++ August 15, 2018:
+
+
+
+![Imgur](https://i.imgur.com/5TuqyFJ.jpg)
+
+
+
+
++ August 13, 2018:
 
 
 
@@ -85,7 +95,7 @@ The planned technology stack:
 
 
 
-+ Day Eleven, August 10, 2018: 
++ August 10, 2018: 
 
 
 
@@ -106,7 +116,7 @@ The planned technology stack:
 
 
 
-+ Day Ten, August 9, 2018: 
++ August 9, 2018: 
 
 
 
@@ -119,7 +129,7 @@ The planned technology stack:
 
 
 
-+ Day Nine, August 7, 2018:
++ August 7, 2018:
 
 
 
@@ -130,7 +140,7 @@ The planned technology stack:
 
 
 
-+ Day Eight, July 19, 2018: 
++ July 19, 2018: 
 
 
 
@@ -144,7 +154,7 @@ The planned technology stack:
 
 
 
-+ Day Seven, July 17, 2018: 
++ July 17, 2018: 
 
 
 
@@ -157,7 +167,7 @@ The planned technology stack:
 
 
 
-+ Day Six, July 16, 2018: 
++ July 16, 2018: 
 
 
 
@@ -171,7 +181,7 @@ The planned technology stack:
 
 
 
-+ Day Five, July 13, 2018: 
++ July 13, 2018: 
 
 
 
@@ -179,7 +189,7 @@ The planned technology stack:
 
 
 
-+ Day Four, July 12, 2018: 
++ July 12, 2018: 
 
 
 
@@ -191,7 +201,7 @@ The planned technology stack:
 
 
 
-+ Day Three, July 11, 2018: 
++ July 11, 2018: 
 
 
 *Added some content:*
@@ -201,7 +211,7 @@ The planned technology stack:
 
 
 
-+ Day Two, July 10, 2018:
++ July 10, 2018:
 
 
 *Added a landing page and a warning banner:* 
@@ -212,7 +222,7 @@ The planned technology stack:
 
 
 
-+ Day One, July 9, 2018: 
++ July 9, 2018: 
 
 
 *Working on the color, utilizing Material-UI theme:*
@@ -231,6 +241,15 @@ The planned technology stack:
 
 
 ## Timeline: 
+
+
+
+**Day Fourteen, August 15, 2018:** 
+
+
+
++ Added content to the Prospective Applicants component. 
+
 
 
 
