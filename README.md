@@ -234,6 +234,13 @@ The planned technology stack:
 
 
 
+**Day Thirteen, August 14, 2018:** 
+
+
++ Added additional disclaimer language to the warning banner. 
+
+
+
 **Day Twelve, August 13, 2018:**
 
 
