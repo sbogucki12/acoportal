@@ -16,10 +16,39 @@ class AdvisorQuestion extends React.Component{
     constructor(props){
         super(props)
         this.state = {
-            name: ''
+            advisor: 'N/A'
         }
         
     }
+
+    advisorSelected = event => {
+        this.setState(() => {
+          return {
+            advisor: event.target.value
+          }
+        })
+    };
+    
+    advisors = [
+        {
+            name: "N/A"
+        },
+        {
+            name: "Joe Advisor"
+        },
+        {
+            name: "Jane Advisor"
+        },
+        {
+            name: "N. Gineer"
+        },
+        {
+            name: "Buzz Lightyear"
+        },
+        {
+            name: "Speed Racer"
+        }
+      ];
 
     render(){
         const { classes } = this.props;
@@ -28,19 +57,14 @@ class AdvisorQuestion extends React.Component{
                 <FormControl className={classes.formControl}>
                     <InputLabel htmlFor="age-simple">Advisor Name</InputLabel>
                         <Select
-                        value={this.state.name}
-                        onChange={this.handleChange}
-                        inputProps={{
-                                        name: 'name',
-                                        id: 'name-simple',
-                                    }}
+                        value={this.state.advisor}
+                        onChange={this.advisorSelected}                        
                         >
-                            <MenuItem value="">
-                                <em>None</em>
-                            </MenuItem>
-                            <MenuItem value={"Advisor1"}>Advisor1</MenuItem>
-                            <MenuItem value={"Advisor2"}>Advisor2</MenuItem>
-                            <MenuItem value={"Advisor3"}>Advisor3</MenuItem>
+                            {this.advisors.map(advisor => (
+                                <MenuItem value={advisor.name} key={advisor.name}>
+                                {advisor.name}
+                                </MenuItem>
+                            ))}
                         </Select>
                     </FormControl>                                    
             </form>    
