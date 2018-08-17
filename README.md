@@ -244,6 +244,14 @@ The planned technology stack:
 
 
 
+**Day Fifteen, August 16, 2018:**
+
+
+
++ Began work on a register user component. 
+
+
+
 **Day Fourteen, August 15, 2018:** 
 
 
