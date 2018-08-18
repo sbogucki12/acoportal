@@ -11,6 +11,7 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
+import { usStates } from './usStates';
 
 const styles = theme => ({
     paperRoot:  {
@@ -31,19 +32,20 @@ const styles = theme => ({
 }); 
 
 class RegisterUser extends React.Component {  
-        state = {
-            firstName: 'First',
-            lastName: 'Last',
-            password: 'Password',
-            email: 'Email',
-            street: 'Street Address',
-            city: 'City',
-            zip: 'Zip',
-            company: 'Company',
-            phone: 'Phone',
-            relation: 'None'
-        }
-    
+    state = {
+        firstName: 'First',
+        lastName: 'Last',
+        password: 'Password',
+        email: 'Email',
+        street: 'Street Address',
+        city: 'City',
+        usState: '',
+        zip: 'Zip',
+        company: 'Company',
+        phone: 'Phone',
+        relation: 'None', 
+        advisor: ''
+    } 
 
     handleChange = event => {
         this.setState({
@@ -58,6 +60,75 @@ class RegisterUser extends React.Component {
             relation: event.target.value
           }
         })
+    };
+
+    advisorSelected = event => {
+        this.setState(() => {
+          return {
+            advisor: event.target.value
+          }
+        })
+    };
+
+    stateSelected = event => {
+        this.setState(() => {
+          return {
+            usState: event.target.value
+          }
+        })
+    };
+
+    advisors = [
+        {
+            name: "N/A"
+        },
+        {
+            name: "Joe Advisor"
+        },
+        {
+            name: "Jane Advisor"
+        },
+        {
+            name: "N. Gineer"
+        },
+        {
+            name: "Buzz Lightyear"
+        },
+        {
+            name: "Speed Racer"
+        }
+      ];
+
+    showAdvisor = () => {
+        const styles = theme => ({
+            container:    {
+                display: 'flex',
+                flexWrap: 'wrap',
+              },
+        })
+        const { classes } = this.props; 
+        if(this.state.relation === 'DER'){
+            return(
+                <div>
+                    <form autoComplete="off">
+                        <FormControl className={classes.container}>
+                            <InputLabel htmlFor="advisor">Please Select Your Advisor:</InputLabel>
+                            <Select
+                            value={this.state.advisor}   
+                            onChange={this.advisorSelected} 
+                            >
+                                {this.advisors.map(advisor => (
+                                    <MenuItem value={advisor.name} key={advisor.name}>
+                                        {advisor.name}
+                                    </MenuItem>
+                                ))}
+                            </Select>
+                        </FormControl>
+                    </form>
+                    <br />
+                </div>
+            )
+        }
     };
     
     relations = [
@@ -76,16 +147,33 @@ class RegisterUser extends React.Component {
         {
             name: "Other"
         }
-      ];
+      ];      
 
     render(){
-        const { classes } = this.props; 
+        const { classes } = this.props;
+        
         return(
             <React.Fragment>
+                <Header />
+                <br />
+                <br />                
+                <Grid container spacing={0} align='center'>
+                    <Grid item xs={1} sm={3} />
+                    <Grid item xs={10} sm={6}>
+                        <Paper className={classes.paperRoot} elevation={6}>                            
+                            <Typography variant="title" gutterBottom>
+                                Please provide info to register for this site: 
+                            </Typography>
+                        </Paper>
+                    </Grid>
+                    <Grid item xs={1} sm={3} />
+                </Grid>
+                <br />
+                <br />
                 <Grid container spacing={0}>
                     <Grid item xs={1} sm={3} />
                     <Grid item xs={10} sm={6}>
-                        <Paper className={classes.root} elevation={6}>
+                        <Paper className={classes.paperRoot} elevation={6}>
                             <Grid container spacing={8} align='center'>
                                 <Grid item xs={1} />
                                 <Grid item xs={10}>
@@ -159,6 +247,21 @@ class RegisterUser extends React.Component {
                                         onChange={(event) => this.handleChange(event)} 
                                         />
                                     </FormControl>
+                                    <form autoComplete="off">
+                                        <FormControl className={classes.container}>
+                                            <FormHelperText>State:</FormHelperText>
+                                            <Select
+                                            value={this.state.usState}   
+                                            onChange={this.stateSelected} 
+                                            >
+                                                {usStates.map(usState => (
+                                                    <MenuItem value={usState.name} key={usState.name}>
+                                                        {usState.name}
+                                                    </MenuItem>
+                                                ))}
+                                            </Select>
+                                        </FormControl>
+                                    </form>
                                     <FormControl className={classes.formControl}>
                                         <InputLabel htmlFor="zip">
                                             Zip Code:
@@ -193,7 +296,9 @@ class RegisterUser extends React.Component {
                                                 ))}
                                             </Select>
                                         </FormControl>
-                                        </form>                                    
+                                    </form>
+                                    <br />
+                                    {this.showAdvisor()}                
                                 </Grid>
                                 <Grid item xs={1} />
                             </Grid>
