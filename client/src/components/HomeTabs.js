@@ -70,6 +70,7 @@ class HomeTabs extends React.Component {
           <TabContainer dir={theme.direction}><Login /></TabContainer>
           <TabContainer dir={theme.direction}><DerLogin /></TabContainer>
         </SwipeableViews>
+        {console.log(process.env.user)}
       </div>
     );
   }

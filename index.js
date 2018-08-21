@@ -41,12 +41,7 @@ app.get('/api/wtsrecord', cors(), (req, res) => {
   });
 
 
-if(process.env.NODE_ENV === 'production'){
-    app.use(express.static('client/build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))   
-    })
-}
+
 
 app.use(session({
     secret: 'secret',
@@ -80,8 +75,11 @@ app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    res.locals.user = req.user || null; 
     next();
 })
+
+
 
 app.post('/api/register', cors(), (req, res) => {
     const firstName     = req.body.firstName;
@@ -97,6 +95,7 @@ app.post('/api/register', cors(), (req, res) => {
     const phone         = req.body.phone;  
     const role          = req.body.role; 
     const advisor       = req.body.advisor;
+    const username      = req.body.email;
     
     req.checkBody('firstName', 'First name is required').notEmpty();
     req.checkBody('lastName', 'Last name is required').notEmpty();
@@ -123,7 +122,8 @@ app.post('/api/register', cors(), (req, res) => {
             zipcode: zipcode, 
             phone: phone, 
             role: role, 
-            advisor: advisor
+            advisor: advisor,
+            username: username
         })
 
         User.createUser(newUser, (err, user) => {
@@ -132,10 +132,77 @@ app.post('/api/register', cors(), (req, res) => {
         })
 
         // req.flash('success_msg', 'You are registered and can now log in.')
-        res.send("You are logged in.")
+        res.send("Record Saved.")
     }
+});
+
+passport.serializeUser((user, done) => {
+    done(null, user.id);
+});
+
+passport.deserializeUser((id, done) => {
+    User.getUserById(id, (err, user) => {
+        done(err, user);
+    });
+});
+
+passport.use(new LocalStrategy(
+    (username, password, done) => {
+        User.getUserByUsername(username, (err, user) => {
+            if(err) throw err;
+            if(!user){
+                return done(null, false, {message: 'Unknown username'})
+            }
+        User.comparePassword(password, user.password, (err, isMatch) => {
+            if(err) throw err; 
+            if(isMatch){
+                return done(null, user)
+            } else {
+                return done(null, false, {message: 'Invalid Password'})
+            }
+        })
+    });
+}));
+
+app.post('/login', cors(),  
+    passport.authenticate('local', {
+        successRedirect: '/goodlogin',
+        failureRedirect: '/badlogin',
+        failureFlash: true
+    }),
+    (req, res) => {
+        res.send("success")
+});
+
+app.get('/goodlogin', (req, res) => {
+    res.send('Username and Password match')
+});
+
+app.get('/badlogin', (req, res) => {
+    res.send('Username and Password do NOT match')
+});
+
+app.get('/goodlogout', (req, res) => {
+    res.send('You have logged out')
+});
+
+app.get('/logout', (req, res) => {
+    req.logout();
+
+    req.flash('success_msg', 'You are logged out');
+
+    res.redirect('/goodlogout');
 })
+
+if(process.env.NODE_ENV === 'production'){
+    app.use(express.static('client/build'));
+    app.get('*', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))   
+    })
+}
+
 
 
 const PORT = process.env.PORT || 5000; 
 app.listen(PORT);
+console.log(`Server now running on ${PORT}`);
