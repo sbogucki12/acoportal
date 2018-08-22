@@ -83,11 +83,11 @@ app.use((req, res, next) => {
 
 app.post('/api/register', cors(), (req, res) => {
     const firstName     = req.body.firstName;
-    const lastName      = req.body.lastName; 
-    const company       = req.body.company;
+    const lastName      = req.body.lastName;
     const email         = req.body.email; 
     const password      = req.body.password; 
     const password2     = req.body.password2;
+    const company       = req.body.company;
     const street        = req.body.street; 
     const city          = req.body.city; 
     const usState       = req.body.usState; 
@@ -112,10 +112,10 @@ app.post('/api/register', cors(), (req, res) => {
     } else {
         const newUser = new User({
             firstName: firstName, 
-            lastName: lastName, 
-            company: company, 
+            lastName: lastName,
             email: email, 
-            password: password,             
+            password: password,
+            company: company,              
             street: street, 
             city: city, 
             usState: usState, 
@@ -192,7 +192,21 @@ app.get('/logout', (req, res) => {
     req.flash('success_msg', 'You are logged out');
 
     res.redirect('/goodlogout');
-})
+});
+
+ensureAuthenticated = (req, res, next) => {
+    if(req.isAuthenticated()){
+        return next();
+    } else {
+        req.flash('error_msg', 'You are not logged in.');
+        res.redirect('/loginagain');
+        // TODO: should redirect to login or send message back to react so it rerenders login form
+    }
+}
+
+app.get('/goodlogout', (req, res) => {
+    res.send('You need to log in')
+});
 
 if(process.env.NODE_ENV === 'production'){
     app.use(express.static('client/build'));
